@@ -1,0 +1,26 @@
+---
+title: "Dev notebook"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load packages
+
+```{r packages}
+library("data.table")
+library("htmltab")
+```
+
+Get ETF names
+
+```{r etf names extract}
+gen_page_url <- function(page_n){
+
+    url = "https://etfdb.com/etfs/issuers/vanguard/#etfs&sort_name=assets_under_management&sort_order=desc&page="
+    return(paste(url, page_n, sep = ""))
+}
+
+```
